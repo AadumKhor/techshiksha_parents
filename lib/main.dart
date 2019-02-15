@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:techshiksha_parents/start_page.dart';
 import 'package:techshiksha_parents/start_screen.dart';
-// import 'package:techshiksha_parents/testscore.dart';
+import 'login.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,11 +12,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: new ThemeData(primarySwatch: Colors.grey),
       title: 'Welcome!',
-      home: StartScreen(),
+      home: StartPage(),
       initialRoute: '.',
       routes: {
-        '.': (context) => StartScreen(),
+        '.': (context) => StartPage(),
         // '/testscores':(context)=>TestScoreScreen(),
+        '/parent' : (context) => StartScreen(),
+        '/login' : (context) => Login()
       },
     );
   }
