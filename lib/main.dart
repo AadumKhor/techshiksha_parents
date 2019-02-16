@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:techshiksha_parents/start_page.dart';
 import 'package:techshiksha_parents/start_screen.dart';
 import 'login.dart';
+import 'panels.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         '.': (context) => StartPage(),
         // '/testscores':(context)=>TestScoreScreen(),
         '/parent' : (context) => StartScreen(),
-        '/login' : (context) => Login()
+        '/login' : (context) => Login(),
+        '/panel': (context) => Panel()
       },
     );
   }

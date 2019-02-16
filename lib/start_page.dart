@@ -18,7 +18,7 @@ final names = [
 ];
 
 String title;
-Color color;
+Color color11, color22;
 
 class Cards extends StatelessWidget {
   final Accounts acc;
@@ -44,7 +44,8 @@ class Cards extends StatelessWidget {
                 icon: Icon(Icons.account_circle),
                 onPressed: () {
                   title = acc.account;
-                  color = acc.color2;
+                  color11 =acc.color1;
+                  color22 = acc.color2;
                   Navigator.pushNamed(context, '/login');
                 },
                 iconSize: 40.0,

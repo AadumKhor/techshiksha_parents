@@ -13,13 +13,26 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        title: Text(title),
-        backgroundColor: color,
-      ),
       body: Container(
         child: Column(
           children: <Widget>[
+            Container(
+              height: 80,
+              width: double.infinity,
+              decoration: new BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [color11, color22],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight
+                )
+              ),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 25),
+                  Text(title, style:TextStyle(fontSize: 30, fontWeight: FontWeight.bold))
+                ],
+              ),
+            ),
             SizedBox(height: 50.0),
             Icon(Icons.account_circle, size: 150.0),
             userName(),
@@ -28,7 +41,15 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: 15.0,
             ),
-            submitButton()
+            RaisedButton(
+              disabledColor: Colors.grey,
+              highlightColor: color22,
+              splashColor: color22,
+              onPressed: () {
+                Navigator.pushNamed(context, '/panel');
+              },
+              child: Text('LOGIN'),
+            )
           ],
         ),
       ),
@@ -59,14 +80,4 @@ Widget passwordField() {
           labelText: 'Password'),
       validator: (val) => val.length < 5 ? 'Incorrect password' : null,
       onSaved: (val) => _pwd = val);
-}
-
-Widget submitButton() {
-  return RaisedButton(
-    disabledColor: Colors.grey,
-    highlightColor: color,
-    splashColor: color,
-    onPressed: () {},
-    child: Text('LOGIN'),
-  );
 }
