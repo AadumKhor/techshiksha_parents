@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:techshiksha_parents/start_page.dart';
 import 'package:techshiksha_parents/start_screen.dart';
 import 'login.dart';
-import 'panels.dart';
+import 'start_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         // '/testscores':(context)=>TestScoreScreen(),
         '/parent' : (context) => StartScreen(),
         '/login' : (context) => Login(),
-        '/panel': (context) => Panel()
+        '/panel': (context) => StartScreen()
       },
     );
   }
